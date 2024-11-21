@@ -12,7 +12,7 @@ public class Topic {
   public Topic(String name) {
     this.id = UUID.randomUUID().toString();
     this.name = name;
-    messages = new ArrayList<>();
+    messages = Collections.synchronizedList(new ArrayList<>());;
     consumerOffset = new HashMap<>();
   }
 
